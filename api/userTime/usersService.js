@@ -28,7 +28,6 @@ const findUser = (req, res, next)=>{
     console.log(documento)
     User.findOne({documento}, (erro, user)=>{
         if(erro){
-            console.log("ta aq")
             return sendErrorsFromDB(res, erro)
         }
         else{
@@ -122,7 +121,8 @@ const add_timeCard = (req, res, next) =>{
                 else{
 
                     var type = '';
-                    if(timeCard[timeCard.length-1].tipo === ('SAIDA') || timeCard.length === 0 ){
+                    if(timeCard.length === 0 || timeCard[timeCard.length-1].tipo === ('SAIDA')){
+                        console.log(timeCard.length)
                         type = 'ENTRADA'
                     }
                     else{
