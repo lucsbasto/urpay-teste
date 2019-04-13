@@ -1,3 +1,4 @@
+const _ = require('lodash')
 const UserTime = require('./usersTime')
 const User = UserTime.user
 const TimeCard = UserTime.timeCard
